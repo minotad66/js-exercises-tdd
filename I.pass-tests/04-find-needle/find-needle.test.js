@@ -1,6 +1,6 @@
 var findTheNeedle = require("./find-needle");
 
-test("Find the needle", function() {
+test("Find the needle", function() { 
   var words = ["house", "train", "slide", "needle", "book"];
   var expected = 3;
 

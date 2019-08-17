@@ -5,6 +5,5 @@ test("Average", function() {
   var expected = 5;
 
   var output = average(numbers);
-
   expect(output).toEqual(expected);
 });

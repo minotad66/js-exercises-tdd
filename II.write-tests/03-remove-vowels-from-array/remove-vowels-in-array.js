@@ -4,7 +4,7 @@ function removeVowelsForWords(words) {
   var result = words.map(function(word) {
     return removeVowels(word);
   });
-
+  console.log(result);
   return result;
 }
 

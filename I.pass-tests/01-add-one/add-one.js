@@ -1,1 +1,1 @@
-module.exports = function(numbers) {};
+module.exports = numbers => numbers.map(num => num+1);

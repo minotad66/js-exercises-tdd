@@ -1,5 +1,7 @@
+let removeVowels = require('./remove-vowels');
+
 test("remove vowels from word", function() {
-  // Arrange
-  // Act
-  // Assert
+  let result = removeVowels('samuel');
+  let expected = 'sml';
+  expect(result).toEqual(expected);
 });
