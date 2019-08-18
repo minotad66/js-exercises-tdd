@@ -1,10 +1,15 @@
 function secondLargest(numbers) {
-    let res = numbers[0];
-    for(let i=1; i < numbers.length; i++){
-        if(res < numbers[i]){
-            res = numbers[i];
+    let num = Math.max(...numbers)
+    let arr = numbers.map(element => {
+        if(element === num){
+            return 0;
         }
-    }
+        else{
+            return element;
+        }
+    })
+    res = Math.max(...arr);
+
     return res;
 }
 

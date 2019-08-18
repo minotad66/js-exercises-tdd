@@ -1,4 +1,4 @@
-const fetch = require(".async-2.test");
+const fetch = require("node-fetch");
 
 const fetcher = function(repoName) {
   return fetch(repoName).then(data => data.json());

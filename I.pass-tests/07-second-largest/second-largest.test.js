@@ -6,4 +6,5 @@ test("Second largest", function() {
   var output = secondLargest(numbers);
 
   expect(output).toEqual(57);
+  
 });
