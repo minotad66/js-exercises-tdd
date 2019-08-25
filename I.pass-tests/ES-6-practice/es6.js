@@ -1,6 +1,5 @@
 // Turn this function into an arrow function
 function arrow() {
-  
   return "es6 is awesome!";
 }
 

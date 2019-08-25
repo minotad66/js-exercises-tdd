@@ -7,7 +7,7 @@ function sale(carSold){
         Toyota: 0
       };
 
-    carSold.forEach( (element, index) => {
+    carSold.forEach( (element) => {
         switch (element.make) {
             case 'Ford':
                 totals.Ford += element.price;
