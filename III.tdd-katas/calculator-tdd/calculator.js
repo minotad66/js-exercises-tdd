@@ -1,39 +1,47 @@
-const convertToNumber = (number) => {
-    let arrNumber = number.split(',');
+const operator = num => {
+  let acumulador = 0;
 
-    let result = arrNumber.filter(num =>{
-        let numNew = num.split('');
-        console.log(numNew)
-        let point = numNew.find(search => search === ';')
-        if(point === ';'){
-            num = numNew.map(num => (num === ';') ? 0 : num)
-            numNew = num.map(a => parseInt(a))
-            num = numNew.reduce((a, b) => a + b);
-            console.log(num);
-            return num;
-        }
-        /* else if(num.search(/[0-9]/) !== -1 && point !== ';'){
-            return num;
-        }
-        else{
-            return 0
-        }; */
-    });
+  num.forEach(element => {
+    acumulador += parseInt(element);
+  });
 
-    console.log(result)
-    return result;
+  return acumulador;
+};
+
+const convertToNumber = number => {
+  let valor = number.split(",");
+  let mayor = valor.find(n => n >= 1000);
+  valor = valor.map(n => {
+    if (parseInt(n) < 1000) {
+      return n;
+    } else {
+      return 0;
+    }
+  });
+  let num = number.split("");
+  let result;
+  if (mayor >= 100) {
+    result = operator(valor);
+  } else if (num[1] === ",") {
+    result = parseInt(num[0]) + parseInt(num[2]);
+  } else if (num[1] === "\n" && num[3] === ",") {
+    result = parseInt(num[0]) + parseInt(num[2]) + parseInt(num[4]);
+  }
+
+  return result;
 };
 
 function add(number) {
-    if (number !== '') {
-        let result = convertToNumber(number);
-        console.log(result)
-        return result.reduce((a=0, b=0) => a + b);
-    }
-    else{
-        return 0;
-    }
+  let num = number.split(",");
+  num = num.find(element => element < 0);
+  if (num < 0) {
+    return "no se admiten numeros negativos";
+  } else if (number !== "") {
+    let result = convertToNumber(number);
+    return result;
+  } else {
+    return 0;
   }
-  
-  module.exports = add;
-  
+}
+
+module.exports = add;
